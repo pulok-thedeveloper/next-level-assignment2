@@ -11,6 +11,11 @@ app.use(cors());
 app.use("/api/products", ProductRouter);
 app.use("/api/orders", OrderRouter);
 
+app.get("/", (req: Request, res: Response) => {
+  res.send("Sohoj Sorol Simple Assignment 002!");
+});
+
+
 // For Not Found Route Error
 app.use((req: Request, res: Response) => {
   res.status(404).json({
@@ -20,8 +25,5 @@ app.use((req: Request, res: Response) => {
 });
 
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello Developers!");
-});
 
 export default app;
