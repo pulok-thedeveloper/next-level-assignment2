@@ -5,7 +5,7 @@ import productJoiSchema from "./product.validation";
 //create Product
 const createProduct = async (req: Request, res: Response) => {
   try {
-    const { product } = req.body;
+    const product = req.body;
 
     // validation using JOI
     const { error, value } = productJoiSchema.validate(product);

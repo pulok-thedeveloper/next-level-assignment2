@@ -4,7 +4,7 @@ import orderJoiSchema from "./order.validation";
 
 const createOrder = async (req: Request, res: Response) => {
   try {
-    const { order } = req.body;
+    const order = req.body;
     const { error, value } = orderJoiSchema.validate(order);
 
     const result = await OrderServices.createOrderIntoDB(value);
